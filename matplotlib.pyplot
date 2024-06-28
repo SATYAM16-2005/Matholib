@@ -71,4 +71,26 @@ plt.ylabel("y axis")  #to set the label of y axis
 plt.show()
 
 
+# code for drawing multiple line in line chart
+import matplotlib.pyplot as plt
+x = [0, 1, 2, 3, 4, 5]
+y1 = [0, 1, 4, 9, 16, 25]
+y2 = [0, 1, 8, 27, 64, 125]
+y3 = [0, 1, 16, 81, 256, 625]
+
+
+plt.plot(x, y1, label='y = x^2', marker='o', linestyle='-', color='b')
+plt.plot(x, y2, label='y = x^3', marker='s', linestyle='--', color='g')
+plt.plot(x, y3, label='y = x^4', marker='^', linestyle='-.', color='r')
+
+
+plt.title('Multiple Lines in Line Chart')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+plt.legend()
+
+plt.grid(True)
+plt.show()
+
 
