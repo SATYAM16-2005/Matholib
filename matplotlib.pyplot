@@ -1,15 +1,71 @@
+#Code fro making a piechart using matplotlib
 import matplotlib.pyplot as plt
 
-# Data to plot
-labels = ['Python', 'Java', 'C++', 'Ruby']
-sizes = [215, 130, 245, 210]
+
+labels = ['Apple', 'Banana', 'Cherry', 'Date']
+sizes = [15, 30, 45, 10]
 colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
-explode = (0.1, 0, 0, 0)  # explode 1st slice
+explode = (0.1, 0, 0, 0)  
 
-# Plot
+
 plt.pie(sizes, explode=explode, labels=labels, colors=colors,
-autopct='%1.1f%%', shadow=True, startangle=140)
+        autopct='%1.1f%%', shadow=True, startangle=140)
 
-plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.title('Programming Language Usage')
+
+plt.axis('equal')
+
+
+plt.title('Fruit Distribution')
+plt.show()
+
+
+
+#With Styling
+import matplotlib.pyplot as plt
+
+
+labels = ['Apple', 'Banana', 'Cherry', 'Date']
+sizes = [15, 30, 45, 10]
+colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
+explode = (0.1, 0, 0, 0)  
+
+
+plt.style.use('ggplot')  
+
+fig, ax = plt.subplots()
+wedges, texts, autotexts = ax.pie(
+    sizes, explode=explode, labels=labels, colors=colors,
+    autopct='%1.1f%%', shadow=True, startangle=140,
+    wedgeprops={'edgecolor': 'black'}
+)
+
+
+for text in texts:
+    text.set_fontsize(12)
+    text.set_color('darkblue')
+    
+for autotext in autotexts:
+    autotext.set_fontsize(12)
+    autotext.set_color('white')
+    autotext.set_weight('bold')
+
+
+ax.axis('equal')
+
+
+plt.title('Fruit Distribution', fontsize=16, color='darkred')
+
+
+plt.show()
+
+
+#Line
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4, 5, 6]  # x-values
+y = [4, 5, 6, 3, 2, 3]  #y-values
+
+plt.plot(x, y, color="green")
+plt.title("x vs y")   #to show the title of the visual
+plt.xlabel("x axis")  #to set the label of a axix
+plt.ylabel("y axis")  #to set the label of y axis
 plt.show()
